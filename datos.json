@@ -2,7 +2,7 @@
     "empleados": {
         "EMP001": {
             "nombre": "Flores Alejo",
-            "dias_disponibles": 2
+            "dias_disponibles": 5
         },
         "EMP002": {
             "nombre": "Laura Rodriguez",
@@ -14,14 +14,6 @@
         }
     },
     "solicitudes": [
-        {
-            "id": "SOL-1",
-            "legajo": "EMP003",
-            "nombre": "Deldillo Lautaro",
-            "fecha_inicio": "10/07/2026",
-            "fecha_fin": "30/07/2027",
-            "dias": 385,
-            "estado": "APROBADA"
-        }
+        
     ]
 }

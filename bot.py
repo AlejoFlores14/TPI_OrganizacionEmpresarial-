@@ -53,7 +53,7 @@ def iniciar_bot():
     print("="*30)
     datos = cargar_datos()
     while True:
-        legajo = input("Ingrese el legajo del empleado: ")
+        legajo = input("Ingrese el legajo del empleado: ").strip().upper()
         if legajo in datos["empleados"]:
             empleado = datos["empleados"][legajo]
             print(f"Empleado: {empleado['nombre']}")
@@ -63,7 +63,7 @@ def iniciar_bot():
     # verificar dias disponibles
     dias_disponibles = empleado["dias_disponibles"]
     if dias_disponibles <= 0:
-        print(f"Bot: No tienes dias disponibles")
+        print("Bot: No tienes dias disponibles")
         print("Bot: Gracias por usar el bot")
         print("="*30)
         return
@@ -86,12 +86,13 @@ def iniciar_bot():
         print(f"Bot: No tienes suficientes dias disponibles para la solicitud. Tienes {dias_disponibles} dias disponibles")
         print("Bot: Gracias por usar el bot")
         print("="*30)
+        return
     else:
         print(f"Bot: Tienes {dias_solicitados} dias disponibles para la solicitud")
-    
+
     # aprobacion automatica
     print("Bot: Solicitud aprobada")
-    
+
     # RRHH guarda los dias 
     datos["empleados"][legajo]["dias_disponibles"] -= dias_solicitados
 
